@@ -33,7 +33,29 @@ app.get("/products", (req, res) => {
 })  
 
 app.post("/products", (req, res) => {
-    const body = req
+    const {name, category, subcategory, price, currency, stock, rating} = req.body;
+
+    const data = JSON.parse(fs.readFileSync("./products.json", "utf-8"));
+
+    const products = data.products;
+    const newId = products.length > 0 ? products[products.length -1].id + 1 : 1001;
+
+    const newProduct = { 
+        id: newId,
+        name, 
+        category,
+        subcategory,
+        price: Number(price),
+        currency: currency || "USD",
+        stock: Number(stock) || 0,
+        rating: Number(rating)
+    };
+    products.push(newProduct);
+    data.count = products.length;
+
+    fs.writeFileSync("./products.json", JSON.stringify(data, null, 2), {encoding: "utf-8"});
+    
+    res.status(201).json(newProduct);
 })
  app.listen(9000, () =>  console.log("Server started on http://localhost:9000"))
 
