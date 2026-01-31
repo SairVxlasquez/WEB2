@@ -2023,13 +2023,13 @@
     },
     {
       "id": 1203,
-      "name": "Smart Sneakers 981",
+      "name": "ASUS ROG Zephyrus G16",
       "category": "Apparel",
       "subcategory": "Sneakers",
-      "price": 217.01,
+      "price": 1899.99,
       "currency": "USD",
-      "stock": 150,
-      "rating": 4.9
+      "stock": 18,
+      "rating": 4.6
     },
     {
       "id": 1204,
@@ -5003,7 +5003,7 @@
     },
     {
       "id": 1501,
-      "name": "Smart Shoes",
+      "name": "Nintendo Switch 2",
       "category": "Sports",
       "subcategory": "Running Shoes",
       "price": 189.99,
